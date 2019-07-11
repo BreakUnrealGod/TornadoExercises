@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>登录</title>
+</head>
+<body>
+<p>{{msg}}</p>
+<form action="{{reverse_url('login')}}" method="post">
+    {% raw xsrf_form_html() %}
+    <p><input type="text" name="username" placeholder="输入用户名"></p>
+    <p><input type="password" name="password" placeholder="密码"></p>
+    <p><input type="submit" value="登录"></p>
+</form>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>添加图书</title>
+    <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+</head>
+<body>
+
+<form action="{{ reverse_url('addbook')}}" method="post">
+    <p><input type="text" name="bname" id="bname" placeholder="输入图书名字"></p>
+    <p><input type="text" name="price" id='price' placeholder="输入价格"></p>
+    <p><input type="submit" id="btn" value="添加图书"></p>
+</form>
+
+<script>
+    // $(function () {
+    //     function getCookie(name) {
+    //         var c = document.cookie.match("\\b" + name + "=([^;]*)\\b");
+    //         return c ? c[1] : undefined;
+    //     }
+    //
+    //     $('#btn').click(function () {
+    //         var bname = $('#bname').val();
+    //         var price = $('#price').val();
+    //         var xsrf = getCookie('_xsrf');
+    //
+    //         $.post("{{reverse_url('addbook')}}", {bname: bname, price: price, _xsrf: xsrf}, function (data) {
+    //             console.log(data)
+    //         })
+    //
+    //     })
+    // })
+
+</script>
+</body>
+</html>

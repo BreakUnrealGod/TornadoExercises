@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>机器人聊天</title>
+    <style>
+        #box {
+            width: 600px;
+            height: 600px;
+            overflow: auto;
+            border: 1px solid red;
+
+        }
+
+    </style>
+    <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+</head>
+<body>
+<div>
+    <input type="text" name="message" placeholder="输入聊天的内容" id="message">
+    <input type="button" id="sendbtn" value="发送">
+</div>
+
+<div id="box">
+
+</div>
+
+<script>
+    $(function () {
+        console.log('page loading。。。。')
+        var ws = new WebSocket('ws://10.0.126.224:8080/robot');
+        // 发送
+        $('#sendbtn').click(function () {
+            message = $('#message').val();
+            if (message.length > 0) {
+                ws.send(message)
+                // 清空
+                $('#message').val("")
+            }
+
+        });
+
+        // 接收
+        ws.onmessage = function (e) {
+            $('#box').append("<p>" + e.data + "</p>")
+        }
+
+    })
+
+</script>
+
+</body>
+</html>

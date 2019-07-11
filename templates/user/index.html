@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>用户首页</title>
+</head>
+<body>
+{#
+{% if username is None %}
+    <p><a href="">登录</a></p>
+    <p><a href="{{reverse_url('register')}}">注册</a></p>
+{%else%}
+    <p>欢迎！{{username}}</p>
+{% end %}
+#}
+
+<p><a href="{{reverse_url('addbook')}}">添加图书</a></p>
+</body>
+</html>

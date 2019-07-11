@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>24小时最新新闻</title>
+</head>
+<body>
+24小时最新新闻是:
+<ul>
+    {% for news in newsList %}
+        <li>
+            <p>
+                {{news['title']}}
+            </p>
+            <img src="{{news['picUrl']}}" alt="">
+        </li>
+
+    {% end %}
+</ul>
+</body>
+</html>
